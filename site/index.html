@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        async function fetchData() {
+            let idioms = document.getElementById('idioms');
+            if (idioms) {
+                idioms.remove();
+            }
+
+            let data;
+            try {
+                const response = await fetch(`http://idiombackend.unific.ga:8000/?kw=${document.getElementById('searchInput').value}`);
+                data = await response.json();
+            } catch (err) {
+                alert(err)
+            }
+            let ul = document.createElement('ul');
+            ul.id = 'idioms';
+            data.forEach(element => {
+                // console.log(element[0])
+                let li = document.createElement('li');
+                li.appendChild(document.createTextNode(element[0]));
+                ul.appendChild(li);
+            });
+            document.getElementById('results').appendChild(ul);
+        }
+    </script>
+</head>
+
+<body>
+    <div>
+        <input type="text" id="searchInput">
+        <button id="searchButton" onclick="fetchData()">search</button>
+    </div>
+    </div>
+    <div id="results">
+    </div>
+    <script>
+        let searchInput = document.getElementById("searchInput");
+        let searchButton = document.getElementById("searchButton");
+
+        searchInput.addEventListener("keyup", function (event) {
+            if (event.keyCode === 13) {
+                event.preventDefault();
+                searchButton.click();
+            }
+        });
+    </script>
+</body>
+
+</html>
