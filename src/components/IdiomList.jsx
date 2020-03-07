@@ -5,7 +5,7 @@ class IdiomList extends Component {
   render() {
     return (
       <div className="row justify-content-center m-2">
-        <div className="col-4">
+        <div className="col-8 col-sm-4">
           <ul className="list-group list-group-flush text-center">
             {this.props.idioms.map(it => (
               <li className="list-group-item" key={it.idiom}>
