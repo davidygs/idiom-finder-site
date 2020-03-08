@@ -13,7 +13,7 @@ const IntroBox = () => {
         </dl>
         <dl className="row">
           <dt>咋用啊</dt>
-          <dd className="col-sm-10">输入“十分美丽”或者“丑陋无比”，按回车</dd>
+          <dd className="col-sm-10">输入“十分美丽”或者“无比丑陋”，按回车</dd>
         </dl>
       </div>
     </div>
