@@ -24,7 +24,7 @@ class IdiomSearchBox extends Component {
             <input
               className="form-control form-control-lg ml-3 w-75"
               type="text"
-              placeholder="例：美丽"
+              placeholder="例：十分美丽"
               value={this.props.searchText}
               onChange={this.handleSearchTextChange}
               disabled={this.props.disabled}
