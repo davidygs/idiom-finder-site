@@ -4,7 +4,7 @@ class IdiomList extends Component {
   state = {};
   render() {
     return (
-      <div className="row justify-content-center m-2">
+      <div className="results row justify-content-center m-2">
         <div className="col-8 col-sm-4">
           <ul className="list-group list-group-flush text-center">
             {this.props.idioms.map(it => (
