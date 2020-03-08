@@ -43,6 +43,9 @@ class IdiomFinderApp extends Component {
   }
   handleSubmit(event) {
     const TIMEOUT = 10000;
+    if (!this.state.searchText) {
+      return;
+    }
     event.preventDefault();
     this.setState({ isWaiting: true, error: false, showIntro: false });
     fetchWithTimeout(
