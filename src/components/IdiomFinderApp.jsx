@@ -46,7 +46,7 @@ class IdiomFinderApp extends Component {
     event.preventDefault();
     this.setState({ isWaiting: true, error: false, showIntro: false });
     fetchWithTimeout(
-      `http://idiombackend.unific.ga:8000/?query=${this.state.searchText}`,
+      `https://backend.chengyu.ga/?query=${this.state.searchText}`,
       { headers: { Accept: "application/json" } },
       TIMEOUT
     )
