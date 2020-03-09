@@ -43,7 +43,7 @@ class IdiomFinderApp extends Component {
   }
   handleSubmit(event) {
     const TIMEOUT = 10000;
-    if (!this.state.searchText) {
+    if (!this.state.searchText || !this.state.searchText.trim()) {
       return;
     }
     event.preventDefault();
